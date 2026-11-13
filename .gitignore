@@ -1,0 +1,16 @@
+# Compiled output
+*.exe
+*.o
+*.obj
+*.out
+*.pdb
+*.ilk
+
+# Editor / IDE
+.vs/
+.vscode/
+*.suo
+*.user
+x64/
+Debug/
+Release/
