@@ -59,7 +59,14 @@ int getChoice(int low, int high)
     {
         cout << "Please enter a number " << low << "-" << high << ": ";
         cin >> choice;
-        if (choice < low || choice > high)
+        if (cin.fail()) //cin fails if user enters anything other than a number
+        {               //so we add this to clear cin
+            cin.clear();
+            cin.ignore(1000, '\n');
+            cout << "That's not a number!" << endl;
+            choice = 0; //reset choice to 0 so the do while loop continues
+        }
+        else if (choice < low || choice > high)
         {
             cout << "Invalid input!" << endl;
         }
