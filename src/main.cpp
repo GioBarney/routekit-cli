@@ -7,7 +7,7 @@
 using namespace std;
 
 void menu();
-void sleep();
+void sleep(); // waits for user input so that the user gets a chance to read the output
 int getChoice(int low, int high);
 
 int main()
@@ -64,7 +64,7 @@ int getChoice(int low, int high)
             cin.clear();
             cin.ignore(1000, '\n');
             cout << "That's not a number!" << endl;
-            choice = 0; //reset choice to 0 so the do while loop continues
+            choice = low - 1; //reset choice to low - 1 so the do while loop continues and theres never a number in choice that can break out of the loop conditions
         }
         else if (choice < low || choice > high)
         {
